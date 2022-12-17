@@ -25,4 +25,25 @@ a. kubectl create deploy webapp --image=nginx:1.17.1 --dry-run -o yaml > webapp_
 
 7. Update the deployment with the image version 1.17.4 and verify
 
-#kubectl set image deploy webapp nginx=nginx:1.17.4
+**#kubectl set image deploy webapp nginx=nginx:1.17.4**
+**#kubectl describe deploy webapp**
+
+8. Check the rollout history and make sure everything is ok after the update
+
+**#kubectl rollout history deploy webapp**
+**#kubectl get deployment**
+
+9. Undo the deployment to the previous version 1.17.1 and verify Image has the previous version
+
+**#kubectl rollout undo deploy webapp**
+**#kubectl describe deploy webapp**
+
+10. Update the deployment with the wrong image version 1.100 and verify something is wrong with the deployment
+
+**#kubectl set image deploy webapp nginx=nginx:1.100**
+**#kubectl rollout status deploy webapp**
+#kubectl rollout undo deploy webapp
+#kubectl rollout history deploy webapp --revision=7
+#
+
+11. 
