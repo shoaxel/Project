@@ -22,3 +22,5 @@ containers:
 status: {}
 
 #kubectl apply -f pv-1.yaml
+#pod/use-pvspec-shosh created
+
