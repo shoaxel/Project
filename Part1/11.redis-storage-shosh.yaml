@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-storage-shosh
+spec:
+  containers:
+    -name: redis
+     image: redis:alpine
+     volumeMounts:
+       - mountPath: /data/redis
+         name: redis-storage-shosh
+  volumes:
+    - name: storage-volume
+      emptyDir: {}
+
+
+#kubectl apply -f redis-storage-shosh.yaml
