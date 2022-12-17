@@ -15,3 +15,4 @@ spec:
 
 
 #kubectl apply -f redis-storage-shosh.yaml
+#pod/redis-storage-shosh created
