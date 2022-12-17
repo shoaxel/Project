@@ -25,3 +25,4 @@ status: {}
 
 #kubectl create deploy webapp --image=nginx --dry-run -o yaml > webapp.yaml
 #Add 5 replicas and save
+#kubectl apply -f webapp.yaml
