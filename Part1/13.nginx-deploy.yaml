@@ -18,5 +18,6 @@ spec:
 
 
 #kubectl apply -f nginx-deploy.yaml
+#deployment.apps/nginx-deploy created
 #kubectl set image deployment nginx-deploy nginx=nginx:1.17 --record
 #kubectl describe deploy nginx-deploy
