@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-resolver-service
+  labels:
+    run: nginx-resolver
+spec:
+  ports:
+    -protocol: TCP
+     port: 80
+     targetPort: 80
+  selector:
+    app: nginx-resolver
+
+
+#kubectl apply -f nginx-resolver-service.yaml
+#kubectl run test-ns --image=busybox:1.28 --rm -it -- nslookup nginx-resolver-service > /root/nginx-shosh.svc 
