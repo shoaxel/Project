@@ -21,3 +21,7 @@ spec:
 
 #kubectl apply -f hr-web-app.yaml
 #deployment.apps/hr-web-app created
+#kubectl get po
+#NAME                          READY   STATUS    RESTARTS   AGE
+#hr-web-app-85dc75bbc6-4ss75   1/1     Running   0          24m
+#messaging                     1/1     Running   0          43m
