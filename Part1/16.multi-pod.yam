@@ -18,3 +18,4 @@ spec:
       
       
  #kubectl apply -f multi-pod.yaml
+ #pod/multi-pod created
