@@ -22,3 +22,7 @@
 
 6. Create a deployment of webapp with image nginx:1.17.1 with container port 80 and verify the image version
 a. kubectl create deploy webapp --image=nginx:1.17.1 --dry-run -o yaml > webapp_nginx.yaml
+
+7. Update the deployment with the image version 1.17.4 and verify
+
+#kubectl set image deploy webapp nginx=nginx:1.17.4
