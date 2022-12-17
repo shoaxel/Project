@@ -64,3 +64,11 @@
 15. Label the worker node nodeName=nginxnode
 
 **#kubectl label node worker nodeName=nginxnode**
+
+17. Verify the pod that it is scheduled with the node selector on the right node... fix it if it’s not behind scheduled
+
+**#kubectl describe pod nginx | grep Node-Selectors**
+
+18. Verify the pod nginx that we just created has this label
+
+**#kubectl describe pod nginx | grep Label**
