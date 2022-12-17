@@ -12,3 +12,4 @@ spec:
 
 
 #kubectl apply -f pv-analytics.yaml
+#persistentvolume/pv-analytics created
