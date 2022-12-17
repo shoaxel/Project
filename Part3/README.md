@@ -25,7 +25,7 @@ a. kubectl create deploy webapp --image=nginx:1.17.1 --dry-run -o yaml > webapp_
 
 7. Update the deployment with the image version 1.17.4 and verify
 
-**#kubectl set image deploy webapp nginx=nginx:1.17.4**
+**#kubectl set image deployment/webapp nginx=nginx:1.17.4  --record**
 **#kubectl describe deploy webapp**
 
 8. Check the rollout history and make sure everything is ok after the update
@@ -42,8 +42,22 @@ a. kubectl create deploy webapp --image=nginx:1.17.1 --dry-run -o yaml > webapp_
 
 **#kubectl set image deploy webapp nginx=nginx:1.100**
 **#kubectl rollout status deploy webapp**
-#kubectl rollout undo deploy webapp
-#kubectl rollout history deploy webapp --revision=7
-#
+**#kubectl rollout undo deploy webapp**
+**#kubectl rollout history deploy webapp --revision=7  -  throws an error**
+**#kubectl rollout history deploy webapp**
+**#kubectl set image deployment/webapp nginx=nginx:latest --record**
+**#kubectl rollout history deploy webapp**
 
-11. 
+11. Apply the autoscaling to this deployment with minimum 10 and maximum 20 replicas and target CPU of 85% and verify hpa is created and replicas are increased to 10from 1
+
+**#kubectl autoscale deployment webapp --cpu-percent=85 --min=10 --max=20**
+**#kubectl get hpa**
+**#kubectl get pods**
+
+13. Clean the cluster by deleting deployment and hpa you just created
+
+**#kubectl delete deploy webapp**
+**#kubectl delete hpa**
+
+14. Create a job and make it run 10 times one after one (run > exit > run >exit ..) using the following configuration:
+**#kubectl create job hello-job --image=busybox --dry-run -o yaml -- echo "Hello I am from job" > hello-job.yaml”**
