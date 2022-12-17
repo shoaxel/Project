@@ -9,4 +9,5 @@ spec:
     command: ["sleep", "1000"]
 
 
-kubectl apply -f static-busybox.yaml
+#kubectl apply -f static-busybox.yaml
+#pod/static-busybox created
