@@ -20,3 +20,4 @@ spec:
 
 
 #kubectl apply -f hr-web-app.yaml
+#deployment.apps/hr-web-app created
